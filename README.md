@@ -22,7 +22,15 @@
 <li>MultiChiefInventory_DDL_v1.3.sql</li>
 </ul>
 
-
+<p>Описание структуры:</p>
+<ul>
+<li>api - классы контроллеров или routes</li>
+<li>app - классы инициализации/запуска</li>
+<li>model - классы сущностей (по таблицам из БД)</li>
+<li>repository - интерфейсы JPA (DAO слой)</li>
+<li>service - классы для логики, логика разделёна по сущностям</li>
+<li>exception - ControllerAdvice, отлавливающий исключения в контроллерах и классы кастомных исключений</li>
+</ul>
 
 <p>Database structure in files:</p>
 <ul>

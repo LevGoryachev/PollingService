@@ -27,7 +27,17 @@ public class PollController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Poll>> getAllMaterials () {
+    public ResponseEntity<List<Poll>> getAll () {
+        return new ResponseEntity<>(pollService.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/active")
+    public ResponseEntity<List<Poll>> getAllActive () {
+        return new ResponseEntity<>(pollService.getAllActive(), HttpStatus.OK);
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Poll>> getAllByUser (@PathVariable Long id) {
         return new ResponseEntity<>(pollService.getAll(), HttpStatus.OK);
     }
 

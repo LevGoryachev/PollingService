@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 import ru.goryachev.pollingservice.model.Poll;
 import ru.goryachev.pollingservice.repository.PollRepository;
 import javax.persistence.EntityNotFoundException;
+
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PollService {
@@ -21,6 +25,17 @@ public class PollService {
     }
 
     public List<Poll> getAll(){
+        return pollRepository.findAll();
+    }
+
+    public List<Poll> getAllActive(){
+        List<Poll> allPolls = pollRepository.findAll();
+        LocalDateTime currentTime = LocalDateTime.now();
+        List<Poll> filtered = allPolls.stream().filter(m -> m.getFinishTime().isAfter(currentTime)).collect(Collectors.toList());
+        return filtered;
+    }
+
+    public List<Poll> getAllByUser(){
         return pollRepository.findAll();
     }
 
