@@ -1,7 +1,5 @@
 package ru.goryachev.pollingservice.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.goryachev.pollingservice.model.Answer;
@@ -14,7 +12,6 @@ import java.util.List;
 public class AnswerService {
 
     private AnswerRepository answerRepository;
-    private final Logger log = LoggerFactory.getLogger(AnswerService.class);
 
     @Autowired
     public AnswerService(AnswerRepository answerRepository) {
@@ -26,17 +23,15 @@ public class AnswerService {
     }
 
     public Answer getById(Long id){
-        log.info("AnswerService: got one by ID)");
         return answerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("ID " + id + " not found"));
     }
 
     public Answer save(Answer answer) {
-        //log.info("AddressService create(address)");
         return answerRepository.save(answer);
     }
 
-    public void delete(Long id) {
-        //log.info("AddressService delete(id)");
+    public String delete (Long id) {
         answerRepository.deleteById(id);
+        return "Entity with id " + id + " was deleted";
     }
 }
