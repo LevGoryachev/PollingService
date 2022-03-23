@@ -19,7 +19,6 @@ import java.util.List;
  * @version 1
  */
 
-@Api(value="PollController", description="CRUD для сущности Опрос (Poll)")
 @RestController
 @RequestMapping("/api/polls")
 public class PollController {

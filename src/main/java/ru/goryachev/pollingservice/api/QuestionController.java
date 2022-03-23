@@ -17,7 +17,6 @@ import java.util.List;
  * @version 1
  */
 
-@Api(value="Q", description="CRUD для сущности Вопрос (Question)")
 @RestController
 @RequestMapping("/api/questions")
 public class QuestionController {

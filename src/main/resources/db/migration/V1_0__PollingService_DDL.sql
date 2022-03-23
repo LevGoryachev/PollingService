@@ -38,7 +38,7 @@ question_id BIGINT REFERENCES "question"(question_id) ON DELETE CASCADE,
 answer_body TEXT
 );
 
-CREATE TABLE "result"(
+CREATE TABLE "spresult"(
 app_user_id BIGINT REFERENCES "app_user"(app_user_id),
 question_id BIGINT REFERENCES "question"(question_id),
 answer_id BIGINT REFERENCES "answer"(answer_id),

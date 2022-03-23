@@ -17,7 +17,6 @@ import java.util.List;
  * @version 1
  */
 
-@Api(value="Q")
 @RestController
 @RequestMapping("/api/answers")
 public class AnswerController {

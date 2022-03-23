@@ -18,8 +18,8 @@
 <li>Запустить TomCat (например, перейти \apache-tomcat-8.5.66\bin в консоли, выполнить catalina start)
  и скопировать архив с приложением(PollingService.war) в \apache-tomcat-8.5.66\webapps. 
  War-архив автоматически распакуется и приложение будет доступно на localhost.</li>
-<li>MultiChiefInventory_DDL_v1.3.sql</li>
-<li>MultiChiefInventory_DDL_v1.3.sql</li>
+<li>Для работы с API можно использовать Postman или другой клиент,
+ также можно использовать Swagger (после запуска сервиса перейдите /swagger-ui/)</li>
 </ul>
 
 <p>Описание структуры:</p>
@@ -29,16 +29,18 @@
 <li>model - классы сущностей (по таблицам из БД)</li>
 <li>repository - интерфейсы JPA (DAO слой)</li>
 <li>service - классы для логики, логика разделёна по сущностям</li>
-<li>exception - ControllerAdvice, отлавливающий исключения в контроллерах и классы кастомных исключений</li>
 </ul>
 
-<p>Database structure in files:</p>
-<ul>
-<li><b>MultiChiefInventory_DDL_v1.3.sql</b></li>
-</ul>
+<p>Модель данных</p>
 
-<h3>Database scheme</h3>
+![PollingService_DB_diagram_v1_0](https://user-images.githubusercontent.com/61917893/159596559-0a2987a4-ff10-4024-8543-611ca55aa86f.jpg)
 
-<p>Descriptions:</p>
+<p>Общее описание:</p>
+<p>В таблицу poll вносятся Опросы. Таблица Вопросы questions имеет внешний ключ на Опросы,
+ аналогично Ответы answers на Вопросы.</p>
+ <p>Запись в таблице answers может иметь пустой внешний ключ в том случае, если ответ вносит пользователь.
+ Запись в таблице answers имеет внешний ключ только в том случае, если ответ является стандартным
+ (пользователь должен выбрать один из ответов для определённого вопроса).</p>
+ <p>Имеется связующая таблица Результаты spresult, можно сделать выборку результатов.</p>
 
 <p>Lev Goryachev 2022</p>

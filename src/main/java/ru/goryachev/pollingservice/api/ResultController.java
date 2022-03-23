@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.goryachev.pollingservice.model.Poll;
 import ru.goryachev.pollingservice.model.Result;
 import ru.goryachev.pollingservice.model.dto.projection.ItemProjection;
 import ru.goryachev.pollingservice.service.ResultService;
@@ -14,12 +13,11 @@ import ru.goryachev.pollingservice.service.ResultService;
 import java.util.List;
 
 /**
- * API для сущности "Вопрос" (Result)
+ * API для сущности "Результат" (Result)
  * @author Lev Goryachev
  * @version 1
  */
 
-@Api(value="Q", description="CRUD для сущности Вопрос (Result)")
 @RestController
 @RequestMapping("/api/results")
 public class ResultController {
@@ -35,14 +33,6 @@ public class ResultController {
     public ResponseEntity<List<ItemProjection>> getAll (@RequestParam (value = "userid", required = false) Long userId) {
         return new ResponseEntity<>(resultService.getAllByUserId(userId), HttpStatus.OK);
     }
-
-    /*@ApiOperation(
-            value = "Получить вопросы определённого Опроса",
-            notes = "В параметрах указать ID Опроса по которому выбираем и тип выбора ответа (выбор готового ответа или пользователь сам вносит текст ответа)")
-    @GetMapping
-    public ResponseEntity<List<Result>> getAllByPollId (@RequestParam (value = "poll", required = false) Long pollId, @RequestParam (value = "selector", required = false) Boolean isSelector) {
-        return new ResponseEntity<>(resultService.getAllByPollId(pollId, isSelector), HttpStatus.OK);
-    }*/
 
     @GetMapping("{id}")
     public ResponseEntity<Result> getById (@PathVariable Long id) {
