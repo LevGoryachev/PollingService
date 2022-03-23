@@ -1,5 +1,9 @@
 package ru.goryachev.pollingservice.api;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +19,7 @@ import java.util.List;
  * @version 1
  */
 
+@Api(value="PollController", description="CRUD для сущности Опрос (Poll)")
 @RestController
 @RequestMapping("/api/polls")
 public class PollController {
@@ -31,11 +36,13 @@ public class PollController {
         return new ResponseEntity<>(pollService.getAll(), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "Получить активные опросы", notes = "Получить активные на данный момент опросы")
     @GetMapping("/active")
     public ResponseEntity<List<Poll>> getAllActive () {
         return new ResponseEntity<>(pollService.getAllActive(), HttpStatus.OK);
     }
 
+    //
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Poll>> getAllByUser (@PathVariable Long id) {
         return new ResponseEntity<>(pollService.getAll(), HttpStatus.OK);
@@ -47,8 +54,8 @@ public class PollController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> create (@RequestBody Poll materialCommonDto) {
-        return new ResponseEntity<>(pollService.save(materialCommonDto), HttpStatus.CREATED);
+    public ResponseEntity<Object> create (@RequestBody Poll poll) {
+        return new ResponseEntity<>(pollService.save(poll), HttpStatus.CREATED);
     }
 
     @PutMapping

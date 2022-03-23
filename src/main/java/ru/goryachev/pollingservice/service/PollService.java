@@ -9,9 +9,14 @@ import ru.goryachev.pollingservice.repository.PollRepository;
 import javax.persistence.EntityNotFoundException;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
+
+/**
+ * Сервис слой "Опрос" (Poll)
+ * @author Lev Goryachev
+ * @version 1.0
+ */
 
 @Service
 public class PollService {
@@ -28,6 +33,7 @@ public class PollService {
         return pollRepository.findAll();
     }
 
+    //выборка активных опросов на текущую дату
     public List<Poll> getAllActive(){
         List<Poll> allPolls = pollRepository.findAll();
         LocalDateTime currentTime = LocalDateTime.now();

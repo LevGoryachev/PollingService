@@ -8,6 +8,12 @@ import ru.goryachev.pollingservice.repository.AppUserRepository;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
+/**
+ * Сервис слой "Пользователь" (AppUser)
+ * @author Lev Goryachev
+ * @version 1.0
+ */
+
 @Service
 public class AppUserService {
 

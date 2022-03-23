@@ -3,6 +3,7 @@ package ru.goryachev.pollingservice.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.goryachev.pollingservice.model.Result;
+import ru.goryachev.pollingservice.model.dto.projection.ItemProjection;
 import ru.goryachev.pollingservice.repository.ResultRepository;
 
 import javax.persistence.EntityNotFoundException;
@@ -18,8 +19,8 @@ public class ResultService {
         this.resultRepository = resultRepository;
     }
 
-    public List<Result> getAll(){
-        return resultRepository.findAll();
+    public List<ItemProjection> getAllByUserId(Long userId){
+        return resultRepository.findAllByAppUserId(userId);
     }
 
     public Result getById(Long id){

@@ -8,6 +8,12 @@ import ru.goryachev.pollingservice.repository.AnswerRepository;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
+/**
+ * Сервис слой "Ответ" (Answer)
+ * @author Lev Goryachev
+ * @version 1.0
+ */
+
 @Service
 public class AnswerService {
 
@@ -20,6 +26,10 @@ public class AnswerService {
 
     public List<Answer> getAll(){
         return answerRepository.findAll();
+    }
+
+    public List<Answer> getAllByQuestionId(Long questionId){
+        return answerRepository.findAllByQuestionId(questionId);
     }
 
     public Answer getById(Long id){

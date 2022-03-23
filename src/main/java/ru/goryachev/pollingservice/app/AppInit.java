@@ -14,8 +14,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan (basePackages = "ru.goryachev.pollingservice")
 public class AppInit extends SpringBootServletInitializer {
 
-    @Override
+    /*@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder appBuilder) {
         return super.configure(appBuilder);
-    }
+    }*/
 }

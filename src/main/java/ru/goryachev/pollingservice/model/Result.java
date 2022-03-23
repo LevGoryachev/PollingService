@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 
 @Entity
-@Table(name = "result")
+@Table(name = "spresult")
 @IdClass(ResultCompositeKey.class)
 public class Result {
 
