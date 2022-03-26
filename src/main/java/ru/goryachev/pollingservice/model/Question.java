@@ -18,7 +18,7 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "question_id")
-    private Long id;
+    private Long questionId;
 
     @Column(name = "question_body")
     private String questionBody;
@@ -34,12 +34,12 @@ public class Question {
     @Column(name = "poll_id")
     private Long pollId;
 
-    public Long getId() {
-        return id;
+    public Long getQuestionId() {
+        return questionId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setQuestionId(Long id) {
+        this.questionId = id;
     }
 
     public String getQuestionBody() {
@@ -79,7 +79,7 @@ public class Question {
         if (this == o) return true;
         if (!(o instanceof Question)) return false;
         Question question = (Question) o;
-        return Objects.equals(getId(), question.getId()) &&
+        return Objects.equals(getQuestionId(), question.getQuestionId()) &&
                 Objects.equals(getQuestionBody(), question.getQuestionBody()) &&
                 Objects.equals(isSelector, question.isSelector) &&
                 Objects.equals(getPoll(), question.getPoll()) &&
@@ -88,13 +88,13 @@ public class Question {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getQuestionBody(), isSelector, getPoll(), getPollId());
+        return Objects.hash(getQuestionId(), getQuestionBody(), isSelector, getPoll(), getPollId());
     }
 
     @Override
     public String toString() {
         return "Question{" +
-                "id=" + id +
+                "questionId=" + questionId +
                 ", questionBody='" + questionBody + '\'' +
                 ", isSelector=" + isSelector +
                 ", poll=" + poll +

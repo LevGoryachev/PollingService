@@ -5,7 +5,7 @@ package ru.goryachev.pollingservice.model.dto.projection;
  * @version 1.1
  */
 public interface QuestionProjection {
-    Long getId();
+    Long getQuestionId();
     String getQuestionBody();
     String getPollId();
 }

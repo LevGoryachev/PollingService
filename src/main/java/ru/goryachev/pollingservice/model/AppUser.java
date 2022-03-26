@@ -1,8 +1,6 @@
 package ru.goryachev.pollingservice.model;
 
 import javax.persistence.*;
-import java.util.Objects;
-import java.util.Set;
 
 /**
  * Модель сущности "Пользователь" (AppUser - т. к. в Spring Security есть класс User)
@@ -17,7 +15,7 @@ public class AppUser {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "app_user_id")
-    private Long id;
+    private Long appUserId;
 
     @Column(name = "login")
     private String login;
@@ -30,12 +28,12 @@ public class AppUser {
     private Set<Role> roles;*/
 
 
-    public Long getId() {
-        return id;
+    public Long getAppUserId() {
+        return appUserId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAppUserId(Long id) {
+        this.appUserId = id;
     }
 
     public String getLogin() {

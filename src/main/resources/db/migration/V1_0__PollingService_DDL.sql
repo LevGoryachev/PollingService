@@ -42,6 +42,7 @@ CREATE TABLE "spresult"(
 app_user_id BIGINT REFERENCES "app_user"(app_user_id),
 question_id BIGINT REFERENCES "question"(question_id),
 answer_id BIGINT REFERENCES "answer"(answer_id),
-PRIMARY KEY (app_user_id, question_id, answer_id)
+PRIMARY KEY (app_user_id, question_id, answer_id),
+result_time TIMESTAMP
 );
 

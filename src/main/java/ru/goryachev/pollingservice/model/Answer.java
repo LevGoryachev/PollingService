@@ -18,7 +18,7 @@ public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "answer_id")
-    private Long id;
+    private Long answerId;
 
     @Column(name = "answer_body")
     private String answerBody;
@@ -31,12 +31,12 @@ public class Answer {
     @Column(name = "question_id")
     private Long questionId;
 
-    public Long getId() {
-        return id;
+    public Long getAnswerId() {
+        return answerId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.answerId = id;
     }
 
     public String getAnswerBody() {
@@ -68,7 +68,7 @@ public class Answer {
         if (this == o) return true;
         if (!(o instanceof Answer)) return false;
         Answer answer = (Answer) o;
-        return Objects.equals(getId(), answer.getId()) &&
+        return Objects.equals(getAnswerId(), answer.getAnswerId()) &&
                 Objects.equals(getAnswerBody(), answer.getAnswerBody()) &&
                 Objects.equals(getQuestion(), answer.getQuestion()) &&
                 Objects.equals(getQuestionId(), answer.getQuestionId());
@@ -76,13 +76,13 @@ public class Answer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getAnswerBody(), getQuestion(), getQuestionId());
+        return Objects.hash(getAnswerId(), getAnswerBody(), getQuestion(), getQuestionId());
     }
 
     @Override
     public String toString() {
         return "Answer{" +
-                "id=" + id +
+                "answerId=" + answerId +
                 ", answerBody='" + answerBody + '\'' +
                 ", question=" + question +
                 ", questionId=" + questionId +

@@ -5,6 +5,6 @@ package ru.goryachev.pollingservice.model.dto.projection;
  * @version 1.1
  */
 public interface AppUserProjection {
-    Long getId();
+    Long getAppUserId();
     String getLogin();
 }
