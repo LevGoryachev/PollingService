@@ -1,4 +1,4 @@
-# PolingService
+# PollingService
 <p><b>PolingService</b> API для системы опросов пользователей.<p/>
 <p>Создано с использованием: Java 11, Spring-Boot, Spring Security, Spring Data JPA.<p/>
 <p><b>Для работы потребуется:</b></p>
