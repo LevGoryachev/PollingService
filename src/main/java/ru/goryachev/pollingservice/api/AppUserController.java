@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * API для сущности "Пользователь" (AppUser)
+ * Все исключения отлавливаются ru.goryachev.pollingservice.exception.ControllerAdvisor
  * @author Lev Goryachev
  * @version 1
  */

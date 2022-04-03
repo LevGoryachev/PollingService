@@ -11,6 +11,7 @@ import java.util.*;
 
 /**
  * API для сущности "Результат" (SpResult)
+ * Все исключения отлавливаются ru.goryachev.pollingservice.exception.ControllerAdvisor
  * @author Lev Goryachev
  * @version 1
  */

@@ -14,7 +14,8 @@ import ru.goryachev.pollingservice.service.PollService;
 import java.util.List;
 
 /**
- * CRUD для сущности "Опрос" (Poll)
+ * API для сущности "Опрос" (Poll)
+ * Все исключения отлавливаются ru.goryachev.pollingservice.exception.ControllerAdvisor
  * @author Lev Goryachev
  * @version 1
  */

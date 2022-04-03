@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * API для сущности "Вопрос" (Question)
+ * Все исключения отлавливаются ru.goryachev.pollingservice.exception.ControllerAdvisor
  * @author Lev Goryachev
  * @version 1
  */
